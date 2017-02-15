@@ -1,3 +1,6 @@
+// branding
+  var myorganisation = "VLSCI"
+
 // these are given initial values in the html document
   var days = $('#days').val();
   var hours = $('#hours').val();
@@ -21,7 +24,7 @@
   // The order of the document parts should follow the order of the form
   // elements as closely as possible.
   function makeScript() {
-   script = "#!/bin/bash\n# Created by the job script generator for SLURM\n# " + Date() + "\n\n";
+   script = "#!/bin/bash\n# Created by the " + myorganisation + " job script generator for SLURM\n# " + Date() + "\n\n";
    script += "# check that the script is launched with sbatch\n";
    script += "if [ \"x$SLURM_JOB_ID\" == \"x\" ]; then\n   echo \"You need to submit your job to the queuing system with sbatch\"\n   exit 1\nfi\n\n";
    script = setJobType(script); /* this should change to be set the partition */
