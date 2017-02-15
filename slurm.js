@@ -27,7 +27,7 @@
    script = "#!/bin/bash\n# Created by the " + myorganisation + " job script generator for SLURM\n# " + Date() + "\n\n";
    script += "# check that the script is launched with sbatch\n";
    script += "if [ \"x$SLURM_JOB_ID\" == \"x\" ]; then\n   echo \"You need to submit your job to the queuing system with sbatch\"\n   exit 1\nfi\n\n";
-   script = setJobType(script); /* this should change to be set the partition */
+   script = setJobType(script);
    script = setName(script);
    script = setCores(script);
    script = setMemory(script);
