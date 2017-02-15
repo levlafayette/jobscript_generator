@@ -124,7 +124,7 @@
 
   // Set the CPU cores section of the script.
   function setCores(script) {
-   var comment = "# Maximum number of CPU cores used by the job:\n";
+   var comment = "# Maximum number of tasks/CPU cores used by the job:\n";
    if (jobtype == "single") {
       var command = "#SBATCH --ntasks=1\n#SBATCH --cpus-per-task=1\n"
    } else if (jobtype == "multithreaded") {
@@ -143,10 +143,9 @@
    // The value of jobtype is determined by a select box.
    var comment = "# Partition for the job:\n";
    var command = "#SBATCH -p main\n\n";
-   if (jobtype == "smp") {
-      var comment2 = "# SMP job: want exclusive use of 1 node\n"
-          var command2 = "#SBATCH --nodes=1\n"
-      command2 += "#SBATCH --exclusive\n\n"
+   if (jobtype == "multithreaded") {
+      var comment2 = "# Multithreaded (SMP) job: must run on one node\n";
+          var command2 = "#SBATCH --nodes=1\n\n"
       return script + comment + command + comment2 + command2;
    } else {
       return script + comment + command;

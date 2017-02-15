@@ -52,7 +52,7 @@
 
         <h4>Multithreaded (SMP)</h4>
 
-          <p>Suitable for shared-memory multithreaded jobs. <em>Note</em> all cores for multithreaded jobs will be allocated on the same node.</p>
+          <p>Suitable for shared-memory multithreaded jobs. <em>Note</em> these jobs cannot use more than one node and cannot use more cores than the number of cores on a node.</p>
 
         <h4>MPI</h4>
 
@@ -84,12 +84,12 @@
 
            <h4>Single Core and MPI</h4>
 
-           <p>For Single Core and MPI jobs this specifies the amount of memory allocated to each CPU core requested by the job. The total memory used is equal to the number of cores in the job multiplied by the amount of memory requested. If you leave this blank then your job will be allocated 1 gigabyte per CPU core.</p>
+           <p>For Single Core and MPI jobs this specifies the amount of memory allocated to each CPU core requested by the job. The total memory used is equal to the number of cores in the job multiplied by the amount of memory requested. If you leave this blank then your job will be allocated 2 gigabyte per CPU core.</p>
            <p>For example if you request 2 CPU cores and 4GB of memory per core, the total memory used by the job is 8GB.</p>
 
-           <h4>Multithreaded jobs</h4>
+           <h4>Multithreaded (SMP) jobs</h4>
 
-           <p>For Multithreaded jobs this is the total memory allocated for the job, irrespective of the number of CPU cores.</p>
+           <p>For Multithreaded (SMP) jobs this is the total memory allocated for the job, irrespective of the number of CPU cores.</p>
         </div><!-- helpboxtext -->
      </div><!-- memoryhelp -->
 
