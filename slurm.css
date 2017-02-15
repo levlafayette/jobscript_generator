@@ -11,26 +11,12 @@ body, html {
 }
 
 #wrap {
-   width:800px;
+   max-width:800px;
    margin:0 auto;
-   /* background:#99c; */
-}
-
-#col01 {
-   float:left;
-   width:400px;
-   /* background:#9c9; */
-}
-
-#col02 {
-   float:right;
-   width:400px;
-   /* background:#c9c; */
 }
 
 #footer {
    clear:both;
-   /* background:#cc9; */
 }
 
 #jobCode {
@@ -41,15 +27,11 @@ body, html {
 }
 
 #command {
-   width:98%;
-}
-
-#content h4 {
-   /* color:#111111; */
+   width:100%;
 }
 
 #modules {
-   width:95%;
+   width:100%;
 }
 
 .numinput {
@@ -57,7 +39,7 @@ body, html {
 }
 
 #otherdirname {
-   width:350px;
+   max-width:350px;
 }
 
 .helpbox {
@@ -66,8 +48,5 @@ body, html {
 
 .helpboxtext {
    margin:10px;
-}
-
-#commandhelp {
-   width:50%;
+   padding:1px;
 }
