@@ -217,16 +217,6 @@
       return script;
   }
 
-  function roundSmpMem(mem) {
-    if (mem <= 24)
-       return 24;
-    else if (mem <= 48)
-       return 48;
-    else
-       return 144;
-  }
-
-
   // Check if a string is a positive integer.
   function isInt(n) {
    var reInt = new RegExp(/^\d+$/);
