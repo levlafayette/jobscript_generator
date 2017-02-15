@@ -27,7 +27,7 @@
      <p><input id="name" type="text" value="">
      <input id="shownamehelp" type="button" value="help"></p>
 
-     <div class="helpbox" id="namehelp">
+     <div class="helpbox" id="namehelp" style="display:none">
         <div class="helpboxtext">
            <p>It is a good idea to give your job a meaningful name. This will help you
            identify it when listing the job queue.</p>
@@ -41,7 +41,7 @@
         <option value="smp">SMP</option>
      </select>
 
-     <input id="showjobtypehelp" type="button" value="help"></p>
+     <input id="showjobtypehelp" type="button" value="hide help"></p>
 
      <div class="helpbox" id="jobtypehelp">
         <div class="helpboxtext">
@@ -66,7 +66,7 @@
         <p><input class="numinput" id="cores" type="text" value="1"> <input id=
         "showcoreshelp" type="button" value="help"></p>
 
-        <div class="helpbox" id="coreshelp">
+        <div class="helpbox" id="coreshelp" style="display:none">
 
            <div class="helpboxtext">
               <p>Enter the maximum number of CPU cores needed by your job.</p>
@@ -78,7 +78,7 @@
 
      <p><input class="numinput" id="memory" type="text"> <input id="showmemoryhelp" type="button" value="help"></p>
 
-     <div class="helpbox" id="memoryhelp">
+     <div class="helpbox" id="memoryhelp" style="display:none">
         <div class="helpboxtext">
 
            <h4>standard jobs</h4>
@@ -126,7 +126,7 @@
 
      <p><input id="showemailhelp" type="button" value="help"></p>
 
-     <div class="helpbox" id="emailhelp">
+     <div class="helpbox" id="emailhelp" style="display:none">
         <div class="helpboxtext">
            <p>You can be notified by email when your job starts running or when it ends
            (either successfully or with an error).</p>
@@ -159,7 +159,7 @@
 
      <p><input id="showtimehelp" type="button" value="help"></p>
 
-     <div class="helpbox" id="timehelp">
+     <div class="helpbox" id="timehelp" style="display:none">
         <div class="helpboxtext">
            <p>Enter the maximum amount of time needed by your whole job.</p>
         </div><!-- helpboxtext -->
@@ -191,7 +191,7 @@
 
      <p><input id="showdirhelp" type="button" value="help"></p>
 
-     <div class="helpbox" id="dirhelp">
+     <div class="helpbox" id="dirhelp" style="display:none">
         <div class="helpboxtext">
 
            <p>Each job is run from a given directory on the computer's filesystem - this is
@@ -217,7 +217,7 @@
      <textarea id="modules" rows="4">
      </textarea><input id="showmoduleshelp" type="button" value="help"></p>
 
-     <div class="helpbox" id="moduleshelp">
+     <div class="helpbox" id="moduleshelp" style="display:none">
         <div class="helpboxtext">
            <p>The <em>modules</em> utility sets up your Unix environment for particular
            versions of specified programs. It is possible to use more than one module in
@@ -241,7 +241,7 @@
 
   <input id="showcommandhelp" type="button" value="help"></p>
 
-  <div class="helpbox" id="commandhelp">
+  <div class="helpbox" id="commandhelp" style="display:none">
      <div class="helpboxtext">
         <p>Enter the command (or commands) that you want to run, one per line.</p>
         <p>Note that MPI jobs need to prefix the command with <em>mpirun</em>.</p>
