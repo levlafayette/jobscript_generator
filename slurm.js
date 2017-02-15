@@ -65,12 +65,15 @@
    if (memory.length != 0) {
       // The value of the jobtype determines how memory is set.
          var comment = "# The amount of memory in megabytes per process in the job:\n";
-                 if (jobtype == "smp") {
-                        var command = "#SBATCH --mem=" + memoryInMB + "\n\n";
+                 if (jobtype == "multithreaded" || jobtype == "single") {
+                        var command = "#SBATCH --mem=" + memoryInMB + "\n";
+                 } else if (jobtype == "mpi") {
+                        var command = "#SBATCH --mem-per-cpu=" + memoryInMB + "\n";
                  } else {
-                        var command = "#SBATCH --mem-per-cpu=" + memoryInMB + "\n\n";
+                        // unknown job type, just ignore it, user should have selected from drop down list
+                        var command = "\n";
                  }
-         return script + comment + command;
+         return script + comment + command + "\n";
    }
    else
       return script;
@@ -121,16 +124,18 @@
 
   // Set the CPU cores section of the script.
   function setCores(script) {
-   // We only specify cores if the jobtype is standard.
-   // At VLSCI smp jobs always get an entire compute node.
-   // cores has already been sanitised.
-   if (jobtype == "smp") {
-      return script;
+   var comment = "# Maximum number of CPU cores used by the job:\n";
+   if (jobtype == "single") {
+      var command = "#SBATCH --ntasks=1\n#SBATCH --cpus-per-task=1\n"
+   } else if (jobtype == "multithreaded") {
+      var command = "#SBATCH --ntasks=1\n#SBATCH --cpus-per-task=" + cores + "\n";
+   } else if (jobtype == "mpi") {
+      var command = "#SBATCH --ntasks=" + cores + "\n";
    } else {
-      var comment = "# Maximum number of CPU cores used by the job:\n";
-      var command = "#SBATCH --ntasks=" + cores + "\n\n";
-      return script + comment + command;
+      // unknown job type, just ignore it, user should have selected from drop down list
+      var command = "\n";
    }
+   return script + comment + command + '\n';
   }
 
   // Set the jobtype section of the script.
@@ -280,7 +285,12 @@
   });
   $('#jobtype').change(function () {
     jobtype = $(this).val();
-    $('#coresSection').toggle();
+    if (jobtype == 'single') {
+        $('#coresSection').hide();
+    }
+    if (jobtype == 'mpi' || jobtype == 'multithreaded') {
+        $('#coresSection').show();
+    }
   });
   $('#cores').change(function () {
    validateAndUpdate ($(this), isInt, function (x) { cores = x; }, '1')

@@ -36,8 +36,9 @@
      <h3>Job Type</h3>
 
      <p><select id="jobtype">
-        <option value="standard">standard</option>
-        <option value="smp">SMP</option>
+        <option value="single">Single Core</option>
+        <option value="multithreaded">Multithreaded (SMP)</option>
+        <option value="mpi">MPI</option>
      </select>
 
      <input id="showjobtypehelp" type="button" value="hide help" /></p>
@@ -45,25 +46,26 @@
      <div class="helpbox" id="jobtypehelp">
         <div class="helpboxtext">
 
-        <h4>standard</h4>
+        <h4>Single Core</h4>
 
-           <p>Suitable for distributed parallel jobs (such as those which use MPI), and single
-           CPU core jobs.</p>
+           <p>Suitable for single CPU core jobs only (not parallel).</p>
 
-        <h4>SMP</h4>
+        <h4>Multithreaded (SMP)</h4>
 
-          <p>Suitable for shared-memory multithreaded jobs. <em>Note</em> these jobs will be
-          allocated an entire node on the system, but cannot use more than one node.</p>
+          <p>Suitable for shared-memory multithreaded jobs. <em>Note</em> all cores for multithreaded jobs will be allocated on the same node.</p>
+
+        <h4>MPI</h4>
+
+          <p>Suitable for distributed parallel jobs use MPI. May use more than one cluster node.</p>
 
         </div><!-- helpboxtext -->
      </div><!-- jobtypehelp -->
 
-     <div id="coresSection">
+     <div id="coresSection" style="display:none">
 
         <h3>CPU Cores</h3>
 
-        <p><input class="numinput" id="cores" type="text" value="1" /> <input id=
-        "showcoreshelp" type="button" value="help" /></p>
+        <p><input class="numinput" id="cores" type="text" value="1" /> <input id="showcoreshelp" type="button" value="help" /></p>
 
         <div class="helpbox" id="coreshelp" style="display:none">
 
@@ -80,19 +82,14 @@
      <div class="helpbox" id="memoryhelp" style="display:none">
         <div class="helpboxtext">
 
-           <h4>standard jobs</h4>
+           <h4>Single Core and MPI</h4>
 
-           <p>For standard jobs this specifies the amount of memory allocated to each CPU core
-           requested by the job. The total memory used is equal to the number of cores in the
-           job multiplied by the amount of memory requested. If you leave this blank then your
-           job will be allocated 1 gigabyte per CPU core.</p>
+           <p>For Single Core and MPI jobs this specifies the amount of memory allocated to each CPU core requested by the job. The total memory used is equal to the number of cores in the job multiplied by the amount of memory requested. If you leave this blank then your job will be allocated 1 gigabyte per CPU core.</p>
+           <p>For example if you request 2 CPU cores and 4GB of memory per core, the total memory used by the job is 8GB.</p>
 
-           <p>For example if you request 2 CPU cores and 4GB of memory per core, the total
-           memory used by the job is 8GB.</p>
+           <h4>Multithreaded jobs</h4>
 
-           <h4>SMP jobs</h4>
-
-           <p>For SMP jobs this is the total memory allocated for the job, irrespective of the number of CPU cores.</p>
+           <p>For Multithreaded jobs this is the total memory allocated for the job, irrespective of the number of CPU cores.</p>
         </div><!-- helpboxtext -->
      </div><!-- memoryhelp -->
 
