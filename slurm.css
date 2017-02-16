@@ -1,52 +1,15 @@
 /* style sheet for SLURM job script generator */
 
-@import url(http://fonts.googleapis.com/css?family=PT+Serif|PT+Serif:b|PT+Serif:i|PT+Sans|PT+Sans:b);
-
-body, html {
-   margin:0;
-   padding:0;
-   background: #fcfcfa;
-   color: #333;
-   font-family: "PT Serif", serif;
-}
-
-#wrap {
-   max-width:800px;
-   margin:0 auto;
-}
-
-#footer {
-   clear:both;
-}
-
-#jobCode {
-   overflow: auto;
-   border:1px;
-   border-style:solid;
-   padding: 20px
-}
-
-#command {
-   width:100%;
-}
-
-#modules {
-   width:100%;
-}
-
-.numinput {
-   width:40px;
-}
-
-#otherdirname {
-   max-width:350px;
-}
-
-.helpbox {
-   background:#ccc;
+textarea {
+   height:120px;
 }
 
 .helpboxtext {
-   margin:10px;
-   padding:1px;
+   background:#abc;
+   padding:8px;
+}
+
+.numinput {
+   text-align: right;
+   width:100%;
 }

@@ -275,10 +275,12 @@
   $('#jobtype').change(function () {
     jobtype = $(this).val();
     if (jobtype == 'single') {
-        $('#coresSection').hide();
+        $('#coressection').hide();
+        $('#coressectionheading').hide();
     }
     if (jobtype == 'mpi' || jobtype == 'multithreaded') {
-        $('#coresSection').show();
+        $('#coressection').show();
+        $('#coressectionheading').show();
     }
   });
   $('#cores').change(function () {
