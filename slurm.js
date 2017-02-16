@@ -1,5 +1,5 @@
 // branding
-  var myorganisation = "VLSCI"
+  var myorganisation = "Melbourne Bioinformatics"
 
 // these are given initial values in the html document
   var days = $('#days').val();
