@@ -26,7 +26,7 @@
 	</div><!-- intro -->
 
 	<div class="row" id="jobnameheading">
-		<h2 class="twelve columns">Job Name</h2>
+		<strong class="twelve columns">Job Name</strong>
 	</div><!-- jobnameheading -->
 
 	<div class="row" id="jobname">
@@ -41,7 +41,7 @@
 	</div><!-- namehelp -->
 
 	<div class="row" id="jobtypeheading">
-		<h2 class="twelve columns">Job Type</h2>
+		<strong class="twelve columns">Job Type</strong>
 	</div><!-- jobtypeheading -->
 
 	<div class="row" id="jobtypesettings">
@@ -55,17 +55,17 @@
 
 	<div class="helpbox row" id="jobtypehelp">
 		<div class="twelve columns helpboxtext">
-			<h4>Single Core</h4>
+			<strong>Single Core</strong>
 			<p>Suitable for single CPU core jobs only (not parallel).</p>
-			<h4>Multithreaded (SMP)</h4>
+			<strong>Multithreaded (SMP)</strong>
 			<p>Suitable for shared-memory multithreaded jobs. <em>Note</em> these jobs cannot use more than one node and cannot use more cores than the number of cores on a node.</p>
-			<h4>MPI</h4>
+			<strong>MPI</strong>
 			<p>Suitable for distributed parallel jobs use MPI. May use more than one cluster node.</p>
 		</div><!-- helpboxtext -->
 	</div><!-- jobtypehelp -->
 
 	<div class="row" id="coressectionheading" style="display:none">
-		<h2 class="twelve columns">CPU Cores</h2>
+		<strong class="twelve columns">CPU Cores</strong>
 	</div><!-- coressection -->
 
 	<div class="row" id="coressection" style="display:none">
@@ -80,7 +80,7 @@
 	</div><!-- coreshelp -->
 
 	<div class="row" id="memoryingbheading">
-		<h2 class="twelve columns">Memory in Gigabytes</h2>
+		<strong class="twelve columns">Memory in Gigabytes</strong>
 	</div><!-- memoryingbheading -->
 
 	<div class="row" id="memoryingb">
@@ -90,17 +90,17 @@
 
 	<div class="helpbox row" id="memoryhelp" style="display:none">
 		<div class="twelve columns helpboxtext">
-			<h4>Single Core and MPI</h4>
+			<strong>Single Core and MPI</strong>
 			<p>For Single Core and MPI jobs this specifies the amount of memory allocated to each CPU core requested by the job. The total memory used is equal to the number of cores in the job multiplied by the amount of memory requested. If you leave this blank then your job will be allocated 2 gigabyte per CPU core.</p>
 			<p>For example if you request 2 CPU cores and 4GB of memory per core, the total memory used by the job is 8GB.</p>
-			<h4>Multithreaded (SMP) jobs</h4>
+			<strong>Multithreaded (SMP) jobs</strong>
 			<p>For Multithreaded (SMP) jobs this is the total memory allocated for the job, irrespective of the number of CPU cores.</p>
 		</div><!-- helpboxtext -->
 
 	</div><!-- memoryhelp -->
 
 	<div class="row" id="emailheading">
-		<h2 class="twelve columns">Email</h2>
+		<strong class="twelve columns">Email</strong>
 	</div><!-- emailheading -->
 
 	<div class="row" id="emailsettings">
@@ -125,7 +125,7 @@
 	</div><!-- emailhelp -->
 
 	<div class="row" id="walltimeheading">
-		<h2 class="twelve columns">Walltime</h2>
+		<strong class="twelve columns">Walltime</strong>
 	</div><!-- walltimeheading -->
 
 	<div class="row" id="walltimedays">
@@ -151,7 +151,7 @@
 	</div><!-- timehelp -->
 
 	<div class="row" id="directorysettingsheading">
-		<h2 class="twelve columns">Directory</h2>
+		<strong class="twelve columns">Directory</strong>
 	</div><!-- directorysettingsheading -->
 
 	<div class="row" id="directorysettings">
@@ -179,7 +179,7 @@
 
 	<div class="row" id="moduleslistheading">
 		<div class="twelve columns" id="modulesheadinginner">
-			<h2>Modules</h2>
+			<strong>Modules</strong>
 			<p>Enter the modules that you would like to load:</p>
 		</div>
 	</div><!-- moduleslistheading -->
@@ -198,7 +198,7 @@
 	</div><!-- moduleshelp -->
 
 	<div class="row" id="commandheading">
-		<h2 class="twelve columns">Command</h2>
+		<strong class="twelve columns">Command</strong>
 	</div><!-- commandheading -->
 
 	<div class="row" id="commandlist">
@@ -215,7 +215,7 @@
 
 	<div class="row" id="finaljobscript">
 		<div class="twelve columns" id="finaljobscriptinner">
-			<h2>The job script</h2>
+			<strong>The job script</strong>
 			<p>Click on the button to make your script. If you change any of the values in the form above you can re-generate the script by clicking the button again.</p>
 			<input class="button-primary" id="makescript" type="button" value="make script" />
 		</div><!-- finaljobscriptinner -->
