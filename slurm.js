@@ -20,6 +20,13 @@
    $('#jobscript').html('<h4>The job script:<\/h4><div id="jobCode"><pre><code>' + text + '<\/code><\/pre><\/div>');
   }
 
+  // Add a download link
+  function addDownloadLink(text) {
+   var encodedtext = btoa(unescape(encodeURIComponent(text)));
+   $('#downloadanchor').attr('href','data:text/plain;charset=utf-8;base64,' + encodedtext);
+   $('#downloadsection').show();
+  }
+
   // Build up the script from its parts and then write it to the HTML document.
   // The order of the document parts should follow the order of the form
   // elements as closely as possible.
@@ -37,6 +44,7 @@
    script = setModules(script);
    script = setCommand(script);
    setJobScript(script);
+   addDownloadLink(script);
   }
 
   // Convert a number to a string and pad with leading zeros.
