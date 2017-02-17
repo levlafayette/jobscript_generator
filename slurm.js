@@ -297,6 +297,7 @@
   });
   $('#makescript').click(function () {
    makeScript();
+   window.scrollTo(0,document.body.scrollHeight);
   });
   $('#emailjobstart').change(function () {
    emailJobStart = !emailJobStart;
