@@ -9,6 +9,10 @@ textarea {
    padding:8px;
 }
 
+.helpbox {
+   margin-bottom:25px;
+}
+
 .numinput {
    text-align: right;
    width:100%;
