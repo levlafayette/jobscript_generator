@@ -34,6 +34,7 @@
    script = "#!/bin/bash\n# Created by the " + myorganisation + " job script generator for SLURM\n# " + Date() + "\n\n";
    script = setJobType(script);
    script = setName(script);
+   script = setPid(script);
    script = setCores(script);
    script = setMemory(script);
    script = setEmail(script);
@@ -115,6 +116,19 @@
       script += addressComment + addressCommand;
    }
    return script;
+  }
+
+  // set the project ID (account) of the job
+  function setPid(script) {
+   // Sanitise the project ID
+   var pid = sanitiseString($('#projectid').val());
+   if (pid.length != 0) {
+      var comment = "# The project ID which this job should run under:\n";
+      var command = '#SBATCH --account="' + pid + '"\n\n';
+      return script + comment + command;
+   }
+   else
+      return script;
   }
 
   // Set the job name section of the script.
@@ -318,7 +332,7 @@
   });
 
   // attach the click handlers to each of the help buttons
-  var helpNames = ["name", "jobtype", "cores", "memory", "time", "dir", "command", "modules", "email"];
+  var helpNames = ["name", "projectid", "jobtype", "cores", "memory", "time", "dir", "command", "modules", "email"];
 
   $.each(helpNames, function(index, value) {
    $('#show' + value + "help").click(function () {
