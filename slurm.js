@@ -1,5 +1,5 @@
 // branding
-  var myorganisation = "Melbourne Bioinformatics"
+  var myorganisation = "University of Melbourne"
 
 // these are given initial values in the html document
   var days = $('#days').val();
@@ -164,12 +164,13 @@
   function setJobType(script) {
    // The value of jobtype is determined by a select box.
    var comment = "# Partition for the job:\n";
-   var command = "#SBATCH -p main\n\n";
-   if (jobtype == "multithreaded") {
-      var comment2 = "# Multithreaded (SMP) job: must run on one node\n";
-          var command2 = "#SBATCH --nodes=1\n\n"
+   if (jobtype == "multithreaded" || jobtype == "single" ) {
+      var comment2 = "# Multithreaded (SMP) job: must run on one node and the cloud partition\n";
+      var command = "#SBATCH --partition=cloud\n\n";
+      var command2 = "#SBATCH --nodes=1\n\n"
       return script + comment + command + comment2 + command2;
    } else {
+      var command = "#SBATCH --partition=physical\n\n";
       return script + comment + command;
    }
   }

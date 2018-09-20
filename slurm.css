@@ -1,7 +1,7 @@
-/* style sheet for SLURM job script generator */
+/* style sheet for Slurm job script generator */
 
 .site {
-   background: #fff url('https://www.melbournebioinformatics.org.au/wp-content/themes/_vlsci/images/top-orange.gif') repeat-x top left;
+   background: #fff;
 }
 
 textarea {
